@@ -3,6 +3,63 @@
 @import 'reset';
 @import 'global';
 
+.header {
+    padding:  40px 0;
+    &_inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.menu {
+   &_list{
+    display: flex;
+   }
+   &_list-item + .menu_list-item {
+    padding-left: 35px;
+   }
+   &_list-link{
+    color: $title-color;
+    padding-bottom: 1px;
+    transition: all .3s;
+    @extend %quicksand-400;
+    &:hover{
+        color: $accent-color;
+        border-bottom: 1px solid  $accent-color;
+        @extend %quicksand-500;
+    } 
+   } 
+   &_list-link-active{
+    color: $accent-color;
+    border-bottom: 1px solid  $accent-color;
+    @extend %quicksand-400;
+   }
+}
+
+.user-nav{
+    display: flex;
+    &_link{
+        position: relative;
+    }
+    &_link + .user-nav_link {
+        padding-left: 25px;
+    }
+    &_num {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $accent-color;
+        top: -9px;
+        right: -14px;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+    }
+}
+
 
 
 @import 'media';
